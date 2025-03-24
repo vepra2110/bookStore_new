@@ -526,7 +526,7 @@ input:focus {
 }
 
 .bookS {
-    margin-top: 98vh;
+    margin-top: 90vh;
     display: flex;
     flex-direction: column;
     gap: 30PX;
