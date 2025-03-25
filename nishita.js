@@ -4,8 +4,9 @@ let bookContainer = document.querySelector(".bookS");
 
 
 book_search.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    let bookName = book_search.value.trim().toLowerCase();
+  let bookName = book_search.value.trim().toLowerCase();
+  if (event.key === "Enter" && bookName) {
+    
     bookContainer.innerHTML = "";
     console.log(bookName);
 
