@@ -49,6 +49,7 @@ function added_updateContainerInnerHtml(Container, i) {
                         </svg></a>
             <h3>${addBookTitle.value}</h3>
             <p>-${addAuthorName.value}</p>
+            <p>₹${addPrice.value}</p>
             <div class="buttons">
                 <button class="details">Details</button>
                 <button>Buy</button>

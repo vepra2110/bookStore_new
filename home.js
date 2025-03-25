@@ -94,6 +94,7 @@ function AddBook(catagory, Container) {
                       </svg></a>
           <h3>${book.title}</h3>
           <p>-${book.author}</p>
+          <p>₹${book.price}</p>
           <div class="buttons">
               <button class="details">Details</button>
               <button>Buy</button>

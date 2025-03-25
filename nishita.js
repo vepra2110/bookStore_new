@@ -35,6 +35,7 @@ book_search.addEventListener("keydown", function (event) {
                         
                             <h3 class="searchtitle">${book.title}</h3>
                             <p class ="author">-${book.author}</p>
+                            <p class ="author">₹${book.price}</p>
                             
                             
                        
