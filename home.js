@@ -108,9 +108,9 @@ function AddBook(catagory, Container) {
   });
 };
 
-for (let i = 0; i < catagories.length; i++) {
-  AddBook(catagories[i], categoryContainer[i]);
-}
+// for (let i = 0; i < catagories.length; i++) {
+//   AddBook(catagories[i], categoryContainer[i]);
+// }
 
 function add_read_more() {
   const read_more_btn = document.getElementsByClassName('details');

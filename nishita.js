@@ -1,7 +1,7 @@
 const book_search = document.querySelector(".search");
 let bookContainer = document.querySelector(".bookS");
 const addBookSection = document.querySelector(".addBookSection");
-
+const sort = document.querySelector(".sort");
 
 
 book_search.addEventListener("keydown", function (event) {
@@ -86,6 +86,102 @@ book_search.addEventListener("keydown", function (event) {
     SearchBook();
   }
 });
+
+let fictionArray = []
+for(let i=0; i<books.length; i++){
+  if(books[i].category == "fiction"){
+    fictionArray.push(books[i]);
+  }
+  
+}
+let nonfictionArray = []
+for(let i=0; i<books.length; i++){
+  if(books[i].category == "nonfiction"){
+    nonfictionArray.push(books[i]);
+  }
+  
+}
+
+let scienceArray = []
+for(let i=0; i<books.length; i++){
+  if(books[i].category == "science"){
+    scienceArray.push(books[i]);
+  }
+}
+let horrorArray = []
+for(let i=0; i<books.length; i++){
+  if(books[i].category == "horror"){
+    horrorArray.push(books[i]);
+  }
+}
+
+let fantasyArray = []
+for(let i=0; i<books.length; i++){
+  if(books[i].category == "fantasy"){
+    fantasyArray.push(books[i]);
+  }
+}
+
+
+
+fictionArray.sort(function(a, b){return a.price-b.price});
+nonfictionArray.sort(function(a, b){return a.price-b.price});
+scienceArray.sort(function(a, b){return a.price-b.price});    
+horrorArray.sort(function(a, b){return a.price-b.price});
+fantasyArray.sort(function(a, b){return a.price-b.price});
+
+
+let categoryMap = {
+  fiction: fictionArray,
+  nonfiction: nonfictionArray,
+  science: scienceArray,
+  horror: horrorArray,
+  fantasy: fantasyArray,
+};
+
+
+
+  function addSortedbooks(bookArray, container) {
+    
+    container.innerHTML = "";
+    bookArray.forEach((book) => {
+      container.innerHTML += `
+           <div class="bookCard"  id="${i}">
+          <img src="${book.image}" alt="">
+        
+        <div class="overlay">
+          <a href="" class="bookmark"><svg xmlns="http://www.w3.org/2000/svg" height="18px"
+                            viewBox="0 -960 960 960" width="24px" fill="#fff">
+                            <path
+                                d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+                        </svg></a>
+            <h3>${book.title}</h3>
+            <p>-${book.author}</p>
+            <p>₹${book.price}</p>
+            <div class="buttons">
+                <button class="details">Details</button>
+                <button>Buy</button>
+            </div>
+            <button class="remove">Remove</button>
+        </div>
+        </div>
+  
+      `;
+    });
+  }
+  addSortedbooks(fictionArray, document.querySelector("#fiction"));
+  addSortedbooks(nonfictionArray, document.querySelector("#nonfiction"));
+  addSortedbooks(scienceArray, document.querySelector("#science")); 
+  addSortedbooks(horrorArray, document.querySelector("#horror"));
+  addSortedbooks(fantasyArray, document.querySelector("#fantasy"));
+  
+  
+
+
+
+
+
+
 
 
 
