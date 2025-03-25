@@ -12,23 +12,26 @@ categoriesArr = {
     'fantasy' : fantasyContainer
 }
 
-var i = 62;
+let j = 62;
 
 console.log(document.getElementsByClassName('remove'));
 
 updateBookButton.addEventListener("click", () => {
-    added_updateContainerInnerHtml(categoriesArr[addCategory.value.trim().toLowerCase()], i);
+    added_updateContainerInnerHtml(categoriesArr[addCategory.value.trim().toLowerCase()], j);
     console.log(document.getElementsByClassName('remove'));
+
+    alert("New Book Added");
+    
+    categoriesArr[addCategory.value.trim().toLowerCase()].scrollIntoView();
+    
     addBookTitle.value = '';
     addAuthorName.value = '';
     addPrice.value = '';
     addImg.value = '';
     addCategory.value = '';
-    alert("New Book Added");
+    
     i++;
 });
-
-
 
 function added_updateContainerInnerHtml(Container, i) {
   const bookDiv = document.createElement("div");
