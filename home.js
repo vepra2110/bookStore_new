@@ -38,7 +38,7 @@ function hamberger() {
 const nav_item = document.getElementsByClassName('fade-in');
 for (let i = 0; i < nav_item.length; i++) {
   const element = nav_item[i];
-  element.style.animationDelay = (i < 7) ? `${(i + 1) / 10}s` : '1s';
+  element.style.animationDelay = (i < nav_item.length-3) ? `${(i + 1) / 10}s` : '1s';
 }
 
 //Creating a dropdown in Categories
