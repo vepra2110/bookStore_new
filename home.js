@@ -70,11 +70,16 @@ typeText();
 
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("#navbar");
+  const search_btn = document.querySelector('.search-box');
 
-  if (window.scrollY > 50)
+  if (window.scrollY > 50){
     navbar.style.background = "#23282f";
-  else
+    search_btn.style.background = '#23282f';
+  }
+  else{
     navbar.style.background = "transparent";
+    search_btn.style.background = 'transparent';
+  }
 });
 
 //Adding books
@@ -108,9 +113,9 @@ function AddBook(catagory, Container) {
   });
 };
 
-// for (let i = 0; i < catagories.length; i++) {
-//   AddBook(catagories[i], categoryContainer[i]);
-// }
+for (let i = 0; i < catagories.length; i++) {
+  AddBook(catagories[i], categoryContainer[i]);
+}
 
 function add_read_more() {
   const read_more_btn = document.getElementsByClassName('details');
@@ -176,3 +181,15 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("theme", document.body.classList.contains("theme-dark") ? "dark" : "light");
   });
 });
+
+function toggleSearch(){
+  const search_btn = document.querySelector('.search-box');
+  const search = document.querySelector('.search')
+  if (search_btn.style.display === 'flex')
+    search_btn.style.display = 'none';
+  else{
+    search_btn.style.display = 'flex';
+    search.focus();
+  }
+  
+}

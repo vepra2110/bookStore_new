@@ -17,15 +17,15 @@ book_search.addEventListener("keydown", function (event) {
       books.forEach((book) => {
         if (book.title.toLowerCase().includes(bookName) || book.author.toLowerCase().includes(bookName)) {
           found = true;
-          
-          
+
+
 
           bookContainer.style.display = "flex";
           bookContainer.style.marginTop = "630px"
           bookContainer.style.marginBottom = "30px"
           bookContainer.style.justifyContent = "center";
           bookContainer.style.alignItems = "center";
-          bookContainer.style.background ="#f8f9fa"
+          bookContainer.style.background = "#f8f9fa"
           bookContainer.innerHTML += `
                     
                     <div class="Searchedbook" id="search-book">
@@ -61,25 +61,25 @@ book_search.addEventListener("keydown", function (event) {
                         
                     </div>
                     `;
-//                     let clicked = false;
-// function wishlistturn(){
-//   clicked=!clicked
-//   let wishlist = document.querySelector("#btn");
-//   if(clicked){
-//     wishlist.style.color = "red";
-  
-// }
-// else{
-// wishlist.style.color = "red";
-// }
-// }           error wishlistturn is not defined
+          //                     let clicked = false;
+          // function wishlistturn(){
+          //   clicked=!clicked
+          //   let wishlist = document.querySelector("#btn");
+          //   if(clicked){
+          //     wishlist.style.color = "red";
+
+          // }
+          // else{
+          // wishlist.style.color = "red";
+          // }
+          // }           error wishlistturn is not defined
         }
-     
-    });
+
+      });
 
       if (!found) {
         bookContainer.innerHTML = "<p class=\"notfound\">No book found.</p>";
-       
+
       }
     }
 
@@ -88,61 +88,37 @@ book_search.addEventListener("keydown", function (event) {
 });
 
 let fictionArray = []
-for(let i=0; i<books.length; i++){
-  if(books[i].category == "fiction"){
-    fictionArray.push(books[i]);
-  }
-  
-}
 let nonfictionArray = []
-for(let i=0; i<books.length; i++){
-  if(books[i].category == "nonfiction"){
-    nonfictionArray.push(books[i]);
-  }
-  
-}
-
 let scienceArray = []
-for(let i=0; i<books.length; i++){
-  if(books[i].category == "science"){
-    scienceArray.push(books[i]);
-  }
-}
 let horrorArray = []
-for(let i=0; i<books.length; i++){
-  if(books[i].category == "horror"){
-    horrorArray.push(books[i]);
-  }
-}
-
 let fantasyArray = []
-for(let i=0; i<books.length; i++){
-  if(books[i].category == "fantasy"){
-    fantasyArray.push(books[i]);
+
+function createArray(name, category) {
+  for (let i = 0; i < category.length; i++) {
+    name.push(category[i]);
   }
+  return name
 }
 
+  createArray(fictionArray,fiction).sort(function (a, b) { return a.price - b.price });
+  createArray(nonfictionArray,nonfiction).sort(function (a, b) { return a.price - b.price });
+  createArray(scienceArray,science).sort(function (a, b) { return a.price - b.price });
+  createArray(horrorArray,horror).sort(function (a, b) { return a.price - b.price });
+  createArray(fantasyArray,fantasy).sort(function (a, b) { return a.price - b.price });
 
 
-fictionArray.sort(function(a, b){return a.price-b.price});
-nonfictionArray.sort(function(a, b){return a.price-b.price});
-scienceArray.sort(function(a, b){return a.price-b.price});    
-horrorArray.sort(function(a, b){return a.price-b.price});
-fantasyArray.sort(function(a, b){return a.price-b.price});
-
-
-let categoryMap = {
-  fiction: fictionArray,
-  nonfiction: nonfictionArray,
-  science: scienceArray,
-  horror: horrorArray,
-  fantasy: fantasyArray,
-};
+  let categoryMap = {
+    'Fiction': fictionArray,
+    'Non-Fiction': nonfictionArray,
+    'Science': scienceArray,
+    'Horror': horrorArray,
+    'Fantasy': fantasyArray,
+  };
 
 
 
   function addSortedbooks(bookArray, container) {
-    
+
     container.innerHTML = "";
     bookArray.forEach((book) => {
       container.innerHTML += `
@@ -169,13 +145,20 @@ let categoryMap = {
       `;
     });
   }
-  addSortedbooks(fictionArray, document.querySelector("#fiction"));
-  addSortedbooks(nonfictionArray, document.querySelector("#nonfiction"));
-  addSortedbooks(scienceArray, document.querySelector("#science")); 
-  addSortedbooks(horrorArray, document.querySelector("#horror"));
-  addSortedbooks(fantasyArray, document.querySelector("#fantasy"));
-  
-  
+
+function sorting(e,id) {
+  let catagory = e.previousElementSibling.innerText;
+  console.log(catagory);
+  addSortedbooks(categoryMap[catagory], document.querySelector(id));
+}
+
+  // addSortedbooks(fictionArray, document.querySelector("#fiction"));
+  // addSortedbooks(nonfictionArray, document.querySelector("#nonfiction"));
+  // addSortedbooks(scienceArray, document.querySelector("#science"));
+  // addSortedbooks(horrorArray, document.querySelector("#horror"));
+  // addSortedbooks(fantasyArray, document.querySelector("#fantasy"));
+
+
 
 
 
