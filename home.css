@@ -732,6 +732,8 @@ margin-right: 10px;
 
 /* Toggle Button */
 .theme-btn {
+    opacity: 0;
+    transform: translateY(-10px);
     width: 50px;
     height: 25px;
     background: var(--button-bg);
