@@ -22,7 +22,7 @@ updateBookButton.addEventListener("click", () => {
 
     alert("New Book Added");
     
-    categoriesArr[addCategory.value.trim().toLowerCase()].scrollIntoView();
+    categoriesArr[addCategory.value.trim().toLowerCase()].scrollIntoView({block: "center"});
     
     addBookTitle.value = '';
     addAuthorName.value = '';
