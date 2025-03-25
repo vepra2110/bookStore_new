@@ -162,3 +162,17 @@ function RemoveBooks() {
     })
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("theme-dark");
+  }
+
+  themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("theme-dark");
+
+      localStorage.setItem("theme", document.body.classList.contains("theme-dark") ? "dark" : "light");
+  });
+});
