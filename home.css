@@ -4,6 +4,9 @@
     --text-color: #000;
     --button-bg: #ccc;
     --circle-bg: #fff;
+    --modal-bg: #e7f4ff;
+    --modal-author: #555;
+    --modal-x: #000;
 }
 
 /* Dark Theme */
@@ -12,6 +15,9 @@
     --text-color: #ffffff;
     --button-bg: #333;
     --circle-bg: #1C1F26;
+    --modal-bg: #10141A;
+    --modal-author: #A0A0A0;
+    --modal-x: #fff;
 }
 
 * {
@@ -482,7 +488,7 @@ input:focus {
 }
 
 .modal-content {
-    background-color: #f0f8ff;
+    background-color: var(--modal-bg);
     margin-top: 3rem;
     display: flex;
     border-radius: 10px;
@@ -530,7 +536,7 @@ input:focus {
 
 .close-modal span:hover {
     cursor: pointer;
-    color: #000;
+    color: var(--modal-x);
 }
 
 .modal-title {
@@ -539,7 +545,7 @@ input:focus {
 
 .modal-author {
     margin: 2.2px 0rem 1.5rem 1rem;
-    color: #555;
+    color: var(--modal-author);
 }
 
 .modal-book-desc {
