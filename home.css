@@ -642,7 +642,6 @@ margin-right: 10px;
 .addBookSection {
     padding: 20px 20px 25px;
     margin: 20px 10px;
-    width: 100%;
     min-height: 300px;
     display: flex;
     flex-direction: column;
