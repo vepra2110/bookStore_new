@@ -473,6 +473,8 @@ input:focus {
 
 .footer-section {
     flex: 1;
+    min-width: 200px;
+    text-align: center;
 }
 
 .footer-section h3 {
@@ -736,6 +738,8 @@ margin-right: 10px;
     margin: 50px 0px 30px;
     padding: 0 20px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-around;
 }
 
@@ -809,4 +813,109 @@ margin-right: 10px;
 
 .theme-dark .toggle-circle {
     left: 27px;
+}
+
+@media only screen and (max-width:870px){
+    #logo a span{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:770px){
+    #link{
+        display: none;
+    }
+
+    #logo a span{
+        display: block;
+    }
+
+    #navbar{
+        justify-content: space-between;
+    }
+
+    .nav{
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 2rem;
+        gap: 1.3rem;
+    }
+
+    .item{
+        margin: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .bars,.close {
+        color: #fff;
+        height: 24px;
+    }
+    
+    .bars{
+        display: block;
+    }
+
+    .close{
+        display: none;
+        z-index: 1;
+    }
+
+    .dropdown-menu{
+        position: relative;
+        background: none;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .dropdown-menu li{
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 475px){
+    .html::-webkit-scrollbar{
+        display: none;
+    }
+
+    #logo a span{
+        display: none;
+    }
+
+    .footer-container{
+        flex-direction: column;
+    }
+
+    .footer-section{
+        display: flex;
+        flex-direction: column;
+        align-items:center ;
+        margin: 5px;
+    }
+
+    .links{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .searching {
+        display: none;
+    }
+
+    .search-box {
+        display: flex;
+    }
+
+    .welcome img{
+        width: 180px;
+    }
+
+    .text {
+        font-size: medium;
+    }
 }
