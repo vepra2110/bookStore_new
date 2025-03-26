@@ -59,14 +59,3 @@ function added_updateContainerInnerHtml(Container, i) {
     Container.prepend(bookDiv);
     RemoveBooks();
   }
-
-
-  function RemoveBooks() {
-    const remove_btn = document.getElementsByClassName('remove');
-    for (let index = 0; index < remove_btn.length; index++) {
-      const element = remove_btn[index];
-      element.addEventListener('click', () => {
-        element.parentElement.parentElement.remove();
-      })
-    }
-  }

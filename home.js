@@ -1,5 +1,6 @@
 const body = document.body;
 const catagories = ['fiction', 'nonfiction', 'science', 'horror', 'fantasy'];
+const catagories_var = [fiction, nonfiction, science, horror, fantasy];
 const fictionContainer = document.getElementById('fiction');
 const nonfictionContainer = document.getElementById('nonfiction');
 const scienceContainer = document.getElementById('science');
@@ -87,6 +88,19 @@ let i = 0;
 function AddBook(catagory, Container) {
   books.forEach(book => {
     if (book.category == catagory) {
+      for (let index = 0; index < catagories.length; index++) {
+        if (book.category === catagories[index]){
+          for (let count = 0,j=count; j < catagories_var[index].length; j++) {
+            if (catagories_var[index][j].title === book.title){
+              catagories_var[index][j].id = i;
+              count++;
+              break
+            }
+            
+          }
+        }
+        
+      }
       Container.innerHTML += `
       <div class="bookCard"  id="${i}">
         <img src="${book.image}" alt="">
@@ -122,11 +136,12 @@ function add_read_more() {
   for (let i = 0; i < read_more_btn.length; i++) {
     const element = read_more_btn[i];
     element.addEventListener('click', () => {
+      const m = document.getElementsByClassName('modal')[0];
+      if(!m){
       let book = books[element.parentElement.parentElement.parentElement.id];
       console.log(book)
       const modal = document.createElement('div');
       modal.className = 'modal';
-
       modal.innerHTML = `
           <div class="modal-content">
                 <div class="modal-book-image">
@@ -145,6 +160,7 @@ function add_read_more() {
 
       body.append(modal);
       modal.style.display = 'flex';
+      }
     })
   }
 };
