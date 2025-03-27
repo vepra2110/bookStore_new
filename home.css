@@ -337,19 +337,20 @@ input:focus {
 }
 
 .sortBy-btn {
-    background: #f4f4f4;
-    color: #333; 
-    border: 1px solid #ccc;
-    padding: 10px 20px;
+    background-color: #f8f3ed; /* Soft cream */
+    color: #615451; /* Dark brown */
+    border: 2px solid #a39d9c;
+    padding: 8px 16px;
     font-size: 16px;
+    font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    margin-bottom: 15px;
+    transition: all 0.3s ease;
 }
 
 .sortBy-btn:hover {
-    background: #e0e0e0;
+    background-color: #4a332d;
+    color: #fff;
 }
 
 .book-section {
