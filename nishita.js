@@ -152,4 +152,3 @@ function sorting(e,id) {
   add_read_more();
   RemoveBooks();
 }
-
