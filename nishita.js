@@ -2,11 +2,14 @@ const book_search = document.querySelector(".search");
 let bookContainer = document.querySelector(".bookS");
 const addBookSection = document.querySelector(".addBookSection");
 const sort = document.querySelector(".sort");
-
+const welcome = document.querySelector(".welcome");
 
 book_search.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     let bookName = book_search.value.trim().toLowerCase();
+    welcome.style.display = "none";
+    // welcome.innerHTML = "";
+    // welcome.outerHTML = "";
     bookContainer.innerHTML = "";
     addBookSection.innerHTML = "";
     addBookSection.classList.remove("addBookSection");
@@ -17,11 +20,24 @@ book_search.addEventListener("keydown", function (event) {
       books.forEach((book) => {
         if (book.title.toLowerCase().includes(bookName) || book.author.toLowerCase().includes(bookName)) {
           found = true;
+          
+          window.addEventListener("scroll", function () {
+            let navbar = document.querySelector("#navbar");
+            const search_btn = document.querySelector('.search-box');
+          
+            if (window.scrollY < 50){
+              navbar.style.background = "#23282f";
+              search_btn.style.background = '#23282f';
+            }
+            
+            
+          });
+          
 
 
 
           bookContainer.style.display = "flex";
-          bookContainer.style.marginTop = "630px"
+          bookContainer.style.marginTop = "70px"
           bookContainer.style.marginBottom = "30px"
           bookContainer.style.justifyContent = "center";
           bookContainer.style.alignItems = "center";
