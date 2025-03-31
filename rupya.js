@@ -26,3 +26,4 @@ function toggleWishlist(button) {
       svg.setAttribute("fill", "white");  
   }
 }
+
