@@ -21,5 +21,8 @@ function addToWishlist(i) {
 function toggleWishlist(button) {
   let svg = button.querySelector("svg");
   if (svg.getAttribute("fill") === "white") {  
-      svg.setAttribute("fill", "white");  }
+      svg.setAttribute("fill", "red");
+  } else {
+      svg.setAttribute("fill", "white");  
+  }
 }
