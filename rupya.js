@@ -15,7 +15,11 @@ function addToWishlist(i) {
 }
 
 
-function toggleWishlist(element) {
-  console.log('hello');
-  element.classList.toggle('active');
+
+
+
+function toggleWishlist(button) {
+  let svg = button.querySelector("svg");
+  if (svg.getAttribute("fill") === "white") {  
+      svg.setAttribute("fill", "white");  }
 }
