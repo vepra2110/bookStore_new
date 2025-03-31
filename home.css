@@ -471,16 +471,15 @@ input:focus {
     position: absolute;
     top: 4px;
     right: 4px;
-}
-.bookmark.active {
-    color: red;
-    transition: color 0.3s ease-in-out;
+    
+    cursor: pointer;
+    border-radius: 8px;
+
 }
 
-.bookmark {
-    color: gray;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+.bookmark:active {
+    background-color: #ff0000;
+
 }
 /* footer  */
 .footer {
