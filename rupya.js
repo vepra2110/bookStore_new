@@ -1,6 +1,6 @@
 
 function addToWishlist(i) {
-  let book = books.find(boo => boo.id === i);
+  let book = books.find(presentbook => presentbook.id === i);
   if (!book) return;
   let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (wishlist.find(b => b.id === book.id)) {
